@@ -9,7 +9,7 @@ public class Main {
     public static final String STD_ID = "12142647";
     public static final float GUITAR_PRICE = 199.00F;
     public static final float LESSON_PRICE = 29.95F;
-    public static final int MAX_Count = 7;
+    public static final int MAX_Count = getHighestNumber(STD_ID);
 
     public static void main(String[] args) {
         byte counter = 1;
@@ -266,7 +266,7 @@ public class Main {
                     minLessonHolder = booking4[0];
                 }else{
                     minLessonHolder += ", " + booking4[0];
-                    isPluralMaxHolders = true;
+                    isPluralMinHolders = true;
                 }
             }
 
@@ -275,7 +275,7 @@ public class Main {
                     minLessonHolder = booking5[0];
                 }else{
                     minLessonHolder += ", " + booking5[0];
-                    isPluralMaxHolders = true;
+                    isPluralMinHolders = true;
                 }
             }
 
@@ -284,7 +284,7 @@ public class Main {
                     minLessonHolder = booking6[0];
                 }else{
                     minLessonHolder += ", " + booking6[0];
-                    isPluralMaxHolders = true;
+                    isPluralMinHolders = true;
                 }
             }
 
@@ -293,7 +293,7 @@ public class Main {
                     minLessonHolder = booking7[0];
                 }else{
                     minLessonHolder += ", " + booking7[0];
-                    isPluralMaxHolders = true;
+                    isPluralMinHolders = true;
                 }
             }
 
@@ -381,5 +381,12 @@ public class Main {
         }else{
             return " has";
         }
+    }
+
+    public static Integer getHighestNumber(String value){
+        String[] idArr = value.split("");
+        Arrays.sort(idArr);
+        String highestNumber = idArr[idArr.length - 1];
+        return Integer.parseInt(highestNumber);
     }
 }
